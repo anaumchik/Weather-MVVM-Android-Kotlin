@@ -25,4 +25,9 @@ class WeatherFragment : Fragment() {
             tempTv.text = data?.main?.temp.toString()
         })
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.onFetchWeather()
+    }
 }
