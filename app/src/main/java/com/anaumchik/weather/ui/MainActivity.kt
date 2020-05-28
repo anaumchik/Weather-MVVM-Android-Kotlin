@@ -1,7 +1,8 @@
-package com.anaumchik.weather
+package com.anaumchik.weather.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.anaumchik.weather.R
 
 class MainActivity : AppCompatActivity() {
 

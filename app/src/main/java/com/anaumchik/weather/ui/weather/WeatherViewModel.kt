@@ -1,4 +1,4 @@
-package com.anaumchik.weather.ui.main
+package com.anaumchik.weather.ui.weather
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,7 @@ class WeatherViewModel(private val repository: WeatherRepositoryImpl) : ViewMode
 
     val weatherLiveData = MutableLiveData<WeatherResponse>()
 
-    fun onFetchWeather() {
+    fun onUpdateWeather() {
         viewModelScope.launch(Dispatchers.IO) {
             val weather = repository.getWeather(CITY_MOSCOW)
             weatherLiveData.postValue(weather)

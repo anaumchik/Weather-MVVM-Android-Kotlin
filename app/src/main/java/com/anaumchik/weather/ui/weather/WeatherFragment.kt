@@ -1,4 +1,4 @@
-package com.anaumchik.weather.ui.main
+package com.anaumchik.weather.ui.weather
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,6 +28,6 @@ class WeatherFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.onFetchWeather()
+        viewModel.onUpdateWeather()
     }
 }
