@@ -1,4 +1,4 @@
-package com.anaumchik.weather.ui
+package com.anaumchik.weather.app.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

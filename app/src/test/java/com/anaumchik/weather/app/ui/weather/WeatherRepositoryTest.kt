@@ -1,8 +1,8 @@
-package com.anaumchik.ui.weather
+package com.anaumchik.weather.app.ui.weather
 
-import com.anaumchik.weather.network.WeatherApi
-import com.anaumchik.weather.network.models.WeatherResponse
-import com.anaumchik.weather.repository.WeatherRepositoryImpl
+import com.anaumchik.weather.app.network.WeatherApi
+import com.anaumchik.weather.app.network.models.WeatherResponse
+import com.anaumchik.weather.app.repository.WeatherRepositoryImpl
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

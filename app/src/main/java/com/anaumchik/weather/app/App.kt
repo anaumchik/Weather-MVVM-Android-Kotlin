@@ -1,9 +1,9 @@
-package com.anaumchik.weather
+package com.anaumchik.weather.app
 
 import android.app.Application
-import com.anaumchik.weather.network.NetworkClient
-import com.anaumchik.weather.repository.WeatherRepositoryImpl
-import com.anaumchik.weather.ui.weather.WeatherViewModel
+import com.anaumchik.weather.app.network.NetworkClient
+import com.anaumchik.weather.app.repository.WeatherRepositoryImpl
+import com.anaumchik.weather.app.ui.weather.WeatherViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin

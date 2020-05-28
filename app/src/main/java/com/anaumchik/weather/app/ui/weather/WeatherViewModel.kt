@@ -1,10 +1,10 @@
-package com.anaumchik.weather.ui.weather
+package com.anaumchik.weather.app.ui.weather
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.anaumchik.weather.network.models.WeatherResponse
-import com.anaumchik.weather.repository.WeatherRepositoryImpl
+import com.anaumchik.weather.app.network.models.WeatherResponse
+import com.anaumchik.weather.app.repository.WeatherRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

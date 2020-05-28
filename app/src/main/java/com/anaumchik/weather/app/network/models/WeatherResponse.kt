@@ -1,4 +1,4 @@
-package com.anaumchik.weather.network.models
+package com.anaumchik.weather.app.network.models
 
 import com.google.gson.annotations.SerializedName
 

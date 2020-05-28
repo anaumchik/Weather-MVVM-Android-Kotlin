@@ -1,6 +1,6 @@
-package com.anaumchik.weather.network
+package com.anaumchik.weather.app.network
 
-import com.anaumchik.weather.network.models.WeatherResponse
+import com.anaumchik.weather.app.network.models.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -1,4 +1,4 @@
-package com.anaumchik.weather.network
+package com.anaumchik.weather.app.network
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

@@ -1,4 +1,4 @@
-package com.anaumchik.weather.ui.weather
+package com.anaumchik.weather.app.ui.weather
 
 import android.os.Bundle
 import android.view.LayoutInflater
