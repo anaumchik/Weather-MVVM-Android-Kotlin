@@ -1,5 +1,6 @@
 package com.anaumchik.weather.app.ui.weather
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,12 +11,13 @@ import kotlinx.coroutines.launch
 
 class WeatherViewModel(private val repository: WeatherRepositoryImpl) : ViewModel() {
 
-    val weatherLiveData = MutableLiveData<WeatherResponse>()
+    private val _weatherLiveData = MutableLiveData<WeatherResponse>()
+    val weatherLiveData: LiveData<WeatherResponse> = _weatherLiveData
 
     fun onUpdateWeather() {
         viewModelScope.launch(Dispatchers.IO) {
             val weather = repository.getWeather(CITY_MOSCOW)
-            weatherLiveData.postValue(weather)
+            _weatherLiveData.postValue(weather)
         }
     }
 

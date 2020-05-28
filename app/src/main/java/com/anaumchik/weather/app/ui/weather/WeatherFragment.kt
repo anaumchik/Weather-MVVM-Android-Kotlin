@@ -24,10 +24,7 @@ class WeatherFragment : Fragment() {
         viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { data ->
             tempTv.text = data?.main?.temp.toString()
         })
-    }
 
-    override fun onResume() {
-        super.onResume()
         viewModel.onUpdateWeather()
     }
 }
