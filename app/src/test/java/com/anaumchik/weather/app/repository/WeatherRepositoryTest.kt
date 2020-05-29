@@ -1,8 +1,7 @@
-package com.anaumchik.weather.app.ui.weather
+package com.anaumchik.weather.app.repository
 
 import com.anaumchik.weather.app.network.WeatherApi
-import com.anaumchik.weather.app.network.models.WeatherResponse
-import com.anaumchik.weather.app.repository.WeatherRepositoryImpl
+import com.anaumchik.weather.app.network.models.WeatherResponseModel
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -13,7 +12,7 @@ import org.junit.Test
 class WeatherRepositoryTest {
 
     private val city = "city"
-    private val weatherResponse: WeatherResponse = mockk()
+    private val weatherResponse: WeatherResponseModel = mockk()
 
     private val api: WeatherApi = mockk()
     private val repository = WeatherRepositoryImpl(api)

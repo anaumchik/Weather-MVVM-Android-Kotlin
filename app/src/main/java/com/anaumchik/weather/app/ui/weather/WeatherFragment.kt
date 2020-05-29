@@ -1,6 +1,7 @@
 package com.anaumchik.weather.app.ui.weather
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +22,9 @@ class WeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { data ->
-            tempTv.text = data?.main?.temp.toString()
+        viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
+            Log.d("WeatherFragment", weather.toString())
+            tempTv.text = weather?.main?.temp.toString()
         })
 
         viewModel.onUpdateWeather()

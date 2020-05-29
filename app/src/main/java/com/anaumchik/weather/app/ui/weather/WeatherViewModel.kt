@@ -4,15 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.anaumchik.weather.app.network.models.WeatherResponse
+import com.anaumchik.weather.app.models.Weather
 import com.anaumchik.weather.app.repository.WeatherRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class WeatherViewModel(private val repository: WeatherRepositoryImpl) : ViewModel() {
 
-    private val _weatherLiveData = MutableLiveData<WeatherResponse>()
-    val weatherLiveData: LiveData<WeatherResponse> = _weatherLiveData
+    private val _weatherLiveData = MutableLiveData<Weather>()
+    val weatherLiveData: LiveData<Weather> = _weatherLiveData
 
     fun onUpdateWeather() {
         viewModelScope.launch(Dispatchers.IO) {
