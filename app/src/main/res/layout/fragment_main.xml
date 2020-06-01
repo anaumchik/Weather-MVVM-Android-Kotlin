@@ -1,17 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient">
 
     <TextView
+        android:id="@+id/cityTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Moscow" />
+
+    <ImageView
+        android:id="@+id/refreshImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="36dp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityTv"
+        tools:text="Updated at: 16/05/2020 09:00 AM" />
+
+    <TextView
         android:id="@+id/tempTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="64sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dateTv"
+        tools:text="20\u00B0C" />
+
+    <TextView
+        android:id="@+id/minTempTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="4dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/minTempValueTv"
+        app:layout_constraintTop_toBottomOf="@+id/dateTv"
+        tools:text="Min Temp:" />
+
+    <TextView
+        android:id="@+id/maxTempTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/maxTempValueTv"
+        app:layout_constraintTop_toBottomOf="@+id/minTempTv"
+        tools:text="Max Temp:" />
+
+    <TextView
+        android:id="@+id/minTempValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/minTempTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="18\u00B0C" />
+
+    <TextView
+        android:id="@+id/maxTempValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/maxTempTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="20\u00B0C" />
+
+    <ImageView
+        android:id="@+id/windImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/ic_wind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempTv" />
+
+    <TextView
+        android:id="@+id/windTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempTv"
+        tools:text="15m/s sw" />
+
+    <ImageView
+        android:id="@+id/humidityImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windImg" />
+
+    <TextView
+        android:id="@+id/humidityTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windTv"
+        tools:text="56%" />
+
+    <ImageView
+        android:id="@+id/pressureImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/ic_pressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidityImg" />
+
+    <TextView
+        android:id="@+id/pressureTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidityTv"
+        tools:text="1004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

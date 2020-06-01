@@ -23,9 +23,15 @@ class WeatherFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
-            Log.d("WeatherFragment", weather.toString())
+            Log.d("WeatherFragment", "received from server: $weather")
             tempTv.text = weather?.main?.temp.toString()
+            humidityTv.text = weather?.main?.humidity.toString()
+            pressureTv.text = weather?.main?.pressure.toString()
+            minTempTv.text = weather?.main?.temp_min.toString()
+            maxTempTv.text = weather?.main?.temp_max.toString()
         })
+
+        refreshImg.setOnClickListener { viewModel.onUpdateWeather() }
 
         viewModel.onUpdateWeather()
     }
