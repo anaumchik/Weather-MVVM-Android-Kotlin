@@ -1,4 +1,4 @@
-package com.anaumchik.weather.app.repository
+package com.anaumchik.weather.app.ui.weather.repository
 
 import com.anaumchik.weather.app.network.WeatherApi
 import com.anaumchik.weather.app.network.models.WeatherResponseModel
