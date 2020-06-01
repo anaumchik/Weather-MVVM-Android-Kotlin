@@ -24,11 +24,20 @@ class WeatherFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
             Log.d("WeatherFragment", "received from server: $weather")
-            tempTv.text = weather?.main?.temp.toString()
-            humidityTv.text = weather?.main?.humidity.toString()
-            pressureTv.text = weather?.main?.pressure.toString()
-            minTempTv.text = weather?.main?.temp_min.toString()
-            maxTempTv.text = weather?.main?.temp_max.toString()
+            val temp = weather?.main?.temp?.toInt() ?: 0
+            tempTv.text = getString(R.string.weather_temp, temp)
+
+            val windSpeed = weather?.wind?.speed?.toInt() ?: 0
+            windTv.text = getString(R.string.weather_wind_speed, windSpeed)
+            val humidity = weather?.main?.humidity?.toInt() ?: 0
+            val humidityText = "$humidity%"
+            humidityTv.text = humidityText
+            pressureTv.text = weather?.main?.pressure?.toInt().toString()
+
+            val tempMin = weather?.main?.temp_min?.toInt() ?: 0
+            minTempValueTv.text = getString(R.string.weather_temp, tempMin)
+            val tempMax = weather?.main?.temp_max?.toInt() ?: 0
+            maxTempValueTv.text = getString(R.string.weather_temp, tempMax)
         })
 
         refreshImg.setOnClickListener { viewModel.onUpdateWeather() }

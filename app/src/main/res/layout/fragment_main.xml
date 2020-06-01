@@ -66,20 +66,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/minTempValueTv"
         app:layout_constraintTop_toBottomOf="@+id/dateTv"
-        tools:text="Min Temp:" />
-
-    <TextView
-        android:id="@+id/maxTempTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:includeFontPadding="false"
-        android:textColor="@color/text_color_white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@id/maxTempValueTv"
-        app:layout_constraintTop_toBottomOf="@+id/minTempTv"
-        tools:text="Max Temp:" />
+        android:text="@string/weather_min_temp" />
 
     <TextView
         android:id="@+id/minTempValueTv"
@@ -92,6 +79,19 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/minTempTv"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="18\u00B0C" />
+
+    <TextView
+        android:id="@+id/maxTempTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:includeFontPadding="false"
+        android:text="@string/weather_max_temp"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/maxTempValueTv"
+        app:layout_constraintTop_toBottomOf="@+id/minTempTv" />
 
     <TextView
         android:id="@+id/maxTempValueTv"
@@ -110,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_wind"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempTv" />
@@ -119,12 +119,12 @@
         android:id="@+id/windTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
         android:includeFontPadding="false"
         android:textColor="@color/text_color_white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/windImg"
         app:layout_constraintTop_toBottomOf="@+id/tempTv"
         tools:text="15m/s sw" />
 
@@ -133,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/ic_humidity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/windImg" />
@@ -142,12 +142,12 @@
         android:id="@+id/humidityTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:includeFontPadding="false"
         android:textColor="@color/text_color_white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/humidityImg"
         app:layout_constraintTop_toBottomOf="@+id/windTv"
         tools:text="56%" />
 
@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/ic_pressure"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/humidityImg" />
@@ -165,12 +165,12 @@
         android:id="@+id/pressureTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:includeFontPadding="false"
         android:textColor="@color/text_color_white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pressureImg"
         app:layout_constraintTop_toBottomOf="@+id/humidityTv"
         tools:text="1004" />
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="weather_temp">%d\u00B0C</string>
+    <string name="weather_wind_speed">%dm/s</string>
+    <string name="weather_min_temp">Min Temp:</string>
+    <string name="weather_max_temp">Max Temp:</string>
 </resources>
