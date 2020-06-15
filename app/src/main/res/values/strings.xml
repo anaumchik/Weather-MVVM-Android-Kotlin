@@ -4,4 +4,5 @@
     <string name="weather_wind_speed">%dm/s</string>
     <string name="weather_min_temp">Min Temp:</string>
     <string name="weather_max_temp">Max Temp:</string>
+    <string name="date_utils_updated_at">Updated at: %s</string>
 </resources>

@@ -9,7 +9,8 @@ import com.anaumchik.weather.app.network.models.WindResponse
 
 fun WeatherResponseModel.toModel(): Weather = Weather(
     main = this.main?.toModel(),
-    wind = this.wind?.toModel()
+    wind = this.wind?.toModel(),
+    name = this.name
 )
 
 internal fun MainResponse.toModel(): Main = Main(

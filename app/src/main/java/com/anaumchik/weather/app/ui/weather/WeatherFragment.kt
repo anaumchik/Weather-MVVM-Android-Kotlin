@@ -24,6 +24,10 @@ class WeatherFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
             Log.d("WeatherFragment", "received from server: $weather")
+
+            cityTv.text = weather?.name
+            dateTv.text = weather?.date
+
             val temp = weather?.main?.temp?.toInt() ?: 0
             tempTv.text = getString(R.string.weather_temp, temp)
 

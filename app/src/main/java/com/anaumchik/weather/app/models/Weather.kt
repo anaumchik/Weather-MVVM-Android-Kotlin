@@ -2,7 +2,9 @@ package com.anaumchik.weather.app.models
 
 data class Weather(
     val main: Main?,
-    val wind: Wind?
+    val wind: Wind?,
+    val name: String?,
+    var date: String? = null
 )
 
 data class Main(
