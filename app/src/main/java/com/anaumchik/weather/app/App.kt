@@ -18,15 +18,15 @@ class App : Application() {
 
     private val modules = module {
         single<WeatherRepository> { WeatherRepositoryImpl(NetworkClient.weatherApi) }
-        single<WeatherInteractor> { WeatherInteractorImpl(get()) }
-        single { StringUtils(context = applicationContext) }
-        single { DateUtils(stringUtils = get()) }
-        viewModel {
-            WeatherViewModel(
-                interactor = get(),
+        single<WeatherInteractor> {
+            WeatherInteractorImpl(
+                repository = get(),
                 dateUtils = get()
             )
         }
+        single { StringUtils(context = applicationContext) }
+        single { DateUtils(stringUtils = get()) }
+        viewModel { WeatherViewModel(interactor = get()) }
     }
 
     override fun onCreate() {

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.anaumchik.weather.R
@@ -16,12 +17,28 @@ class WeatherFragment : Fragment() {
 
     private val viewModel: WeatherViewModel by viewModel()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        refreshImg.setOnClickListener { viewModel.onUpdateWeather() }
+
+        observeViewModel()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.onUpdateWeather()
+    }
+
+    private fun observeViewModel() {
+        // SUCCESS
         viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
             Log.d("WeatherFragment", "received from server: $weather")
 
@@ -43,9 +60,9 @@ class WeatherFragment : Fragment() {
             val tempMax = weather?.main?.temp_max?.toInt() ?: 0
             maxTempValueTv.text = getString(R.string.weather_temp, tempMax)
         })
-
-        refreshImg.setOnClickListener { viewModel.onUpdateWeather() }
-
-        viewModel.onUpdateWeather()
+        // ERROR
+        viewModel.weatherErrorLiveData.observe(viewLifecycleOwner, Observer { error ->
+            Toast.makeText(context, error.localizedMessage, Toast.LENGTH_SHORT).show()
+        })
     }
 }
