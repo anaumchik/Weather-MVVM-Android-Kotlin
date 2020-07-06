@@ -9,8 +9,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.anaumchik.weather.R
-import kotlinx.android.synthetic.main.fragment_main.*
-
+import kotlinx.android.synthetic.main.fragment_main.cityTv
+import kotlinx.android.synthetic.main.fragment_main.dateTv
+import kotlinx.android.synthetic.main.fragment_main.humidityTv
+import kotlinx.android.synthetic.main.fragment_main.maxTempValueTv
+import kotlinx.android.synthetic.main.fragment_main.minTempValueTv
+import kotlinx.android.synthetic.main.fragment_main.pressureTv
+import kotlinx.android.synthetic.main.fragment_main.refreshImg
+import kotlinx.android.synthetic.main.fragment_main.tempTv
+import kotlinx.android.synthetic.main.fragment_main.windTv
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class WeatherFragment : Fragment() {
