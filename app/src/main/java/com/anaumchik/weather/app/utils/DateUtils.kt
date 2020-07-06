@@ -1,7 +1,9 @@
 package com.anaumchik.weather.app.utils
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class DateUtils(private val stringUtils: StringUtils) {
 

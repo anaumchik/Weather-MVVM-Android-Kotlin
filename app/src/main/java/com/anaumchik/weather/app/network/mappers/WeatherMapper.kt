@@ -25,4 +25,3 @@ internal fun WindResponse.toModel(): Wind = Wind(
     speed = this.speed,
     deg = this.deg
 )
-

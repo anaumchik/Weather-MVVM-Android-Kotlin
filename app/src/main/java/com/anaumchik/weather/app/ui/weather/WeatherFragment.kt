@@ -46,30 +46,36 @@ class WeatherFragment : Fragment() {
 
     private fun observeViewModel() {
         // SUCCESS
-        viewModel.weatherLiveData.observe(viewLifecycleOwner, Observer { weather ->
-            Log.d("WeatherFragment", "received from server: $weather")
+        viewModel.weatherLiveData.observe(
+            viewLifecycleOwner,
+            Observer { weather ->
+                Log.d("WeatherFragment", "received from server: $weather")
 
-            cityTv.text = weather?.name
-            dateTv.text = weather?.date
+                cityTv.text = weather?.name
+                dateTv.text = weather?.date
 
-            val temp = weather?.main?.temp?.toInt() ?: 0
-            tempTv.text = getString(R.string.weather_temp, temp)
+                val temp = weather?.main?.temp?.toInt() ?: 0
+                tempTv.text = getString(R.string.weather_temp, temp)
 
-            val windSpeed = weather?.wind?.speed?.toInt() ?: 0
-            windTv.text = getString(R.string.weather_wind_speed, windSpeed)
-            val humidity = weather?.main?.humidity?.toInt() ?: 0
-            val humidityText = "$humidity%"
-            humidityTv.text = humidityText
-            pressureTv.text = weather?.main?.pressure?.toInt().toString()
+                val windSpeed = weather?.wind?.speed?.toInt() ?: 0
+                windTv.text = getString(R.string.weather_wind_speed, windSpeed)
+                val humidity = weather?.main?.humidity?.toInt() ?: 0
+                val humidityText = "$humidity%"
+                humidityTv.text = humidityText
+                pressureTv.text = weather?.main?.pressure?.toInt().toString()
 
-            val tempMin = weather?.main?.temp_min?.toInt() ?: 0
-            minTempValueTv.text = getString(R.string.weather_temp, tempMin)
-            val tempMax = weather?.main?.temp_max?.toInt() ?: 0
-            maxTempValueTv.text = getString(R.string.weather_temp, tempMax)
-        })
+                val tempMin = weather?.main?.temp_min?.toInt() ?: 0
+                minTempValueTv.text = getString(R.string.weather_temp, tempMin)
+                val tempMax = weather?.main?.temp_max?.toInt() ?: 0
+                maxTempValueTv.text = getString(R.string.weather_temp, tempMax)
+            }
+        )
         // ERROR
-        viewModel.weatherErrorLiveData.observe(viewLifecycleOwner, Observer { error ->
-            Toast.makeText(context, error.localizedMessage, Toast.LENGTH_SHORT).show()
-        })
+        viewModel.weatherErrorLiveData.observe(
+            viewLifecycleOwner,
+            Observer { error ->
+                Toast.makeText(context, error.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+        )
     }
 }
